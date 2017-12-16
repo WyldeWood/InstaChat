@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="Chat.css">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+        </script>
+        
+        <script type="text/javascript" src="client.js"></script>
+
+        <meta name="roomName" content="{{roomName}}">
+        <meta name="screenName" content=>
+
+
+	</head>
+	 <body>
+        <div id='NamePage'>
+            <h1>ChitChat</h1>
+            <div id='i'>Enter a screen name</div>
+            <div id='submitarea'>
+                <input type="text" name="nickname_not_hidden" id="messageField">
+                <button id="NameButton">Next</button>
+            </div>
+        </div>
+        <div id='ChatPage'>
+            <h2>
+                <div class="header">
+                    <button id="ChangeNameButton">Change Nickname</button>
+                    <span>ChitChat Room:</span>
+                    {{#roomName}}
+                    <li id='RoomName'>{{roomName}}</li>
+                    {{/roomName}}
+                    <input Type="button" value="Back to Room List" onClick="history.go(-1);return true;">
+                </div>
+            </h2>
+
+            <ul id='MessageBox'>
+                <li>Begin Chatting Now!</li>
+            </ul>
+            <ul id='MembersList'>
+                <li>Members Currently On-line:</li>
+            </ul>
+            <div id="messageForm">
+                <input type="text" name="message" id="messagefield">
+                <input type="hidden" name="nickname" id="nicknameField" value=""> 
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </body>
+    
